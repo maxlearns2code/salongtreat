@@ -1,6 +1,7 @@
 import BottomBar from "@/components/BottomBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
@@ -9,8 +10,7 @@ export default function Home() {
       
       <Hero />
 
-      {/* Services Section Spacehoder for scrolling */}
-      <div className="h-screen bg-transparent" />
+      <Services />
 
       <BottomBar />
     </main>
