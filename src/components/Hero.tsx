@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-20 px-5 md:px-10 flex justify-center items-center min-h-screen pb-20">
+    <section className="relative w-full pt-36 md:pt-32 px-5 md:px-10 flex justify-center items-center min-h-screen pb-20">
       <div className="relative w-full max-w-4xl aspect-[4/5] md:aspect-[3/2] overflow-hidden bg-accent/20 flex flex-col justify-center items-center">
         
         {/* Animated Background layer */}

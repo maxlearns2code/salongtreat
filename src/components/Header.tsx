@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -23,16 +24,29 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex flex-col text-center">
-            <span className="font-serif text-2xl tracking-wide font-light">
-              SALONG TREAT
-            </span>
-            <span className="text-[10px] tracking-[0.2em] font-sans mt-0.5">
-              GUSTAVSBERG
-            </span>
-          </Link>
-          <div className="hidden md:flex space-x-8 text-xs font-medium tracking-[0.15em]">
+        <div className="grid grid-cols-3 items-center">
+          
+          {/* Left Spacer */}
+          <div className="hidden md:block"></div>
+
+          {/* Centered Logo */}
+          <div className="col-span-3 md:col-span-1 flex justify-center">
+            <Link href="/" className="flex flex-col items-center justify-center transition-transform hover:scale-105 active:scale-95">
+              <Image 
+                src="/logo.png" 
+                alt="Salong Treat Gustavsberg" 
+                width={300} 
+                height={150} 
+                className={`w-auto object-contain transition-all duration-300 ${
+                  scrolled ? "h-16 md:h-12" : "h-24 md:h-16"
+                }`} 
+                priority 
+              />
+            </Link>
+          </div>
+
+          {/* Right Navigation Links (Desktop) */}
+          <div className="hidden md:flex justify-end space-x-8 text-xs font-medium tracking-[0.15em]">
             <Link href="#rituals" className="hover:text-amber-700 transition-colors">
               RITUALS
             </Link>
@@ -43,6 +57,7 @@ export default function Header() {
               CONNECT
             </Link>
           </div>
+          
         </div>
       </div>
     </header>
