@@ -1,21 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import HeroSlider from "./HeroSlider";
+import HeroSliderForDesktop from "./HeroSliderForDesktop";
+import HeroSliderForMobile from "./HeroSliderForMobile";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[100dvh] pt-[145px] pb-[93px] px-5 flex flex-col items-center justify-evenly py-6 md:pt-32 md:pb-20 md:px-10">
       
-      {/* Image Container */}
-      <div className="relative w-full max-w-4xl aspect-[4/5] md:aspect-[3/2] overflow-hidden bg-accent/20 shadow-md">
-        
+      {/* Mobile Image Container */}
+      <div className="md:hidden relative w-full aspect-[4/5] overflow-hidden bg-accent/20 shadow-md">
         {/* Animated Image Slider Background */}
-        <HeroSlider />
+        <HeroSliderForMobile />
 
         {/* L-Shape Borders Top-Left and Bottom-Right */}
-        <div className="absolute top-6 left-6 w-12 h-12 md:w-20 md:h-20 border-t-[0.5px] border-l-[0.5px] border-foreground/40 z-10" />
-        <div className="absolute bottom-6 right-6 w-12 h-12 md:w-20 md:h-20 border-b-[0.5px] border-r-[0.5px] border-foreground/40 z-10" />
+        <div className="absolute top-6 left-6 w-12 h-12 md:w-20 md:h-20 border-t-[0.5px] border-l-[0.5px] border-foreground/40 z-10 pointer-events-none" />
+        <div className="absolute bottom-6 right-6 w-12 h-12 md:w-20 md:h-20 border-b-[0.5px] border-r-[0.5px] border-foreground/40 z-10 pointer-events-none" />
+      </div>
+
+      {/* Desktop Image Container */}
+      <div className="hidden md:block relative w-full max-w-[1600px] flex-1 min-h-[50vh] overflow-hidden bg-accent/20 shadow-md md:mb-8">
+        {/* Animated Horizontal Slider */}
+        <HeroSliderForDesktop />
+
+        {/* L-Shape Borders Top-Left and Bottom-Right */}
+        <div className="absolute top-8 left-8 w-16 h-16 md:w-24 md:h-24 border-t-[0.5px] border-l-[0.5px] border-foreground/40 z-10 pointer-events-none" />
+        <div className="absolute bottom-8 right-8 w-16 h-16 md:w-24 md:h-24 border-b-[0.5px] border-r-[0.5px] border-foreground/40 z-10 pointer-events-none" />
       </div>
 
       {/* Text Content - Positioned Below Image */}

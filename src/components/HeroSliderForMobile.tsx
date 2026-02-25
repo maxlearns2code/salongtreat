@@ -3,16 +3,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import images from "../data/heroImages.json";
 
-const images = [
-  "/images/salong-treat-haircut-1.webp",
-  "/images/salong-treat-balayage-2.webp",
-  "/images/salong-treat-coloring-3.webp",
-  "/images/salong-treat-hair-care-4.webp",
-  "/images/salong-treat-styling-5.webp",
-];
-
-export default function HeroSlider() {
+export default function HeroSliderForMobile() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -46,7 +39,7 @@ export default function HeroSlider() {
       </AnimatePresence>
       
       {/* Light beige overlay to ensure dark text remains readable and keeps the brand aesthetic */}
-      <div className="absolute inset-0 bg-[#Dacfc0]/20 z-10" />
+      <div className="absolute inset-0 bg-[#Dacfc0]/20 z-10 pointer-events-none" />
     </div>
   );
 }
